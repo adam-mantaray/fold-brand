@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FØLD — Logo Explorations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,200;0,300;0,600;0,700;0,800;0,900;1,700&family=Big+Shoulders+Display:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,700;0,900;1,100&family=Oswald:wght@200;300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,700;0,900;1,100&family=Space+Grotesk:wght@300;400;500;700&family=Anton&family=Unbounded:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --orange: #FF5722;
+  --yellow: #FFB300;
+  --charcoal: #1A1A1A;
+  --cream: #FFF8F0;
+  --offwhite: #FAFAF8;
+  --bg: #EDEBE6;
+  --grid-gap: 2px;
+}
+
+body {
+  background: var(--bg);
+  font-family: 'Space Grotesk', sans-serif;
+  padding: 80px 60px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #BBB;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--grid-gap);
+  background: #CCC8C0;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.panel {
+  position: relative;
+  background: var(--offwhite);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  padding: 40px 32px 52px;
+  overflow: hidden;
+}
+
+.label {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 7.5px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #BCBCB0;
+}
+
+.num {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #D0CCBF;
+}
+
+/* ——— 1. ARCHITECTURAL ——— */
+.p1 { background: var(--offwhite); }
+.p1 .logo {
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 104px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: var(--charcoal);
+  line-height: 1;
+}
+.p1 .o { color: var(--orange); }
+
+/* ——— 2. EDITORIAL SERIF ——— */
+.p2 { background: var(--cream); }
+.p2 .logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 86px;
+  font-weight: 300;
+  letter-spacing: 10px;
+  color: var(--charcoal);
+  line-height: 1;
+}
+.p2 .o { color: var(--orange); }
+.p2 .label { color: #C8B89A; }
+
+/* ——— 3. DARK CONDENSED ——— */
+.p3 { background: var(--charcoal); }
+.p3 .logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 108px;
+  font-weight: 800;
+  letter-spacing: 6px;
+  color: #FAFAFA;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.p3 .o { color: var(--orange); }
+.p3 .label { color: #555; }
+.p3 .num { color: #444; }
+
+/* ——— 4. ULTRA THIN ——— */
+.p4 { background: #FAFAFA; }
+.p4 .logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 72px;
+  font-weight: 100;
+  letter-spacing: 22px;
+  color: var(--charcoal);
+  line-height: 1;
+  text-transform: uppercase;
+  padding-left: 22px;
+}
+.p4 .o { color: var(--orange); }
+
+/* ——— 5. WARM GOLDEN ——— */
+.p5 { background: var(--cream); }
+.p5 .logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 104px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: var(--yellow);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.p5 .o { color: var(--orange); }
+.p5 .label { color: #C8B89A; }
+
+/* ——— 6. ORANGE BLOCK ——— */
+.p6 { background: var(--orange); }
+.p6 .logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 104px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: #FAFAFA;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.p6 .o { color: var(--yellow); }
+.p6 .label { color: rgba(255,255,255,0.35); }
+.p6 .num { color: rgba(255,255,255,0.3); }
+
+/* ——— 7. ITALIC SERIF ——— */
+.p7 { background: var(--offwhite); }
+.p7 .logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 86px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 2px;
+  color: var(--charcoal);
+  line-height: 1;
+}
+.p7 .o { color: var(--orange); }
+
+/* ——— 8. IMPACT POSTER ——— */
+.p8 { background: var(--yellow); }
+.p8 .logo {
+  font-family: 'Anton', sans-serif;
+  font-size: 110px;
+  letter-spacing: 4px;
+  color: var(--charcoal);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.p8 .o { color: var(--orange); }
+.p8 .label { color: rgba(0,0,0,0.25); }
+.p8 .num { color: rgba(0,0,0,0.2); }
+
+/* ——— 9. OUTLINE STROKE ——— */
+.p9 { background: #FAFAFA; }
+.p9 .logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 108px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--charcoal);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.p9 .o {
+  -webkit-text-stroke: 2.5px var(--orange);
+}
+
+/* ——— 10. BRAND MARK LOCKUP ——— */
+.p10 { background: var(--cream); }
+.p10 .mark {
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 120px;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 0.9;
+  text-align: center;
+}
+.p10 .sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 12px;
+  color: var(--charcoal);
+  text-transform: uppercase;
+  padding-left: 12px;
+  margin-top: 6px;
+}
+.p10 .label { color: #C8B89A; }
+
+/* ——— 11. RALEWAY LIGHT ——— */
+.p11 { background: var(--offwhite); }
+.p11 .logo {
+  font-family: 'Raleway', sans-serif;
+  font-size: 88px;
+  font-weight: 100;
+  letter-spacing: 12px;
+  color: var(--charcoal);
+  line-height: 1;
+  text-transform: uppercase;
+  padding-left: 12px;
+}
+.p11 .o { color: var(--orange); }
+
+/* ——— 12. UNBOUNDED WIDE ——— */
+.p12 { background: var(--charcoal); }
+.p12 .logo {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #FAFAFA;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.p12 .o { color: var(--orange); }
+.p12 .label { color: #555; }
+.p12 .num { color: #444; }
+
+/* ——— 13. SPLIT COLOR ——— */
+.p13 { background: #FAFAFA; }
+.p13 .logo {
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 104px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+.p13 .f  { color: var(--orange); }
+.p13 .o  { color: var(--orange); }
+.p13 .ld { color: var(--charcoal); }
+
+/* ——— 14. DM SERIF ITALIC ——— */
+.p14 { background: var(--cream); }
+.p14 .logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 90px;
+  font-style: italic;
+  letter-spacing: 4px;
+  color: var(--charcoal);
+  line-height: 1;
+}
+.p14 .o { color: var(--orange); }
+.p14 .label { color: #C8B89A; }
+
+/* ——— 15. CONDENSED LIGHT ——— */
+.p15 { background: var(--offwhite); }
+.p15 .logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 110px;
+  font-weight: 200;
+  letter-spacing: 10px;
+  color: var(--charcoal);
+  line-height: 1;
+  text-transform: uppercase;
+  padding-left: 10px;
+}
+.p15 .o { color: var(--orange); }
+
+/* ——— 16. CHARCOAL YELLOW ——— */
+.p16 { background: var(--charcoal); }
+.p16 .logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 88px;
+  font-weight: 600;
+  letter-spacing: 8px;
+  color: var(--yellow);
+  line-height: 1;
+}
+.p16 .o { color: var(--orange); }
+.p16 .label { color: #555; }
+.p16 .num { color: #444; }
+
+/* ——— 17. OSWALD LIGHT ——— */
+.p17 { background: #FAFAFA; }
+.p17 .logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 110px;
+  font-weight: 200;
+  letter-spacing: 14px;
+  color: var(--charcoal);
+  line-height: 1;
+  text-transform: uppercase;
+  padding-left: 14px;
+}
+.p17 .o { color: var(--orange); }
+
+/* ——— 18. BARLOW ITALIC ——— */
+.p18 { background: var(--orange); }
+.p18 .logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 108px;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 2px;
+  color: #FAFAFA;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.p18 .o { color: var(--yellow); }
+.p18 .label { color: rgba(255,255,255,0.35); }
+.p18 .num { color: rgba(255,255,255,0.3); }
+
+/* ——— 19. SMALL MINIMAL ——— */
+.p19 {
+  background: var(--cream);
+  position: relative;
+}
+.p19::before {
+  content: '';
+  position: absolute;
+  top: 55px;
+  left: 32px;
+  right: 32px;
+  height: 1px;
+  background: var(--orange);
+  opacity: 0.4;
+}
+.p19::after {
+  content: '';
+  position: absolute;
+  bottom: 42px;
+  left: 32px;
+  right: 32px;
+  height: 1px;
+  background: var(--orange);
+  opacity: 0.4;
+}
+.p19 .logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 42px;
+  font-weight: 300;
+  letter-spacing: 18px;
+  color: var(--charcoal);
+  line-height: 1;
+  text-transform: uppercase;
+  padding-left: 18px;
+}
+.p19 .o { color: var(--orange); }
+.p19 .label { color: #C8B89A; }
+
+/* ——— 20. UNBOUNDED BLACK ——— */
+.p20 {
+  background: var(--offwhite);
+}
+.p20 .logo {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 52px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: var(--charcoal);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.p20 .o { color: var(--orange); }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>FØLD — Logo Explorations</h1>
+  <p>20 Variations · Brand Colors · Select your direction</p>
+</header>
+
+<div class="grid">
+
+  <div class="panel p1">
+    <span class="num">01</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">Architectural</div>
+  </div>
+
+  <div class="panel p2">
+    <span class="num">02</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">Editorial Serif</div>
+  </div>
+
+  <div class="panel p3">
+    <span class="num">03</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">Dark Condensed</div>
+  </div>
+
+  <div class="panel p4">
+    <span class="num">04</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">Ultra Thin</div>
+  </div>
+
+  <div class="panel p5">
+    <span class="num">05</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">Warm Golden</div>
+  </div>
+
+  <div class="panel p6">
+    <span class="num">06</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">Orange Block</div>
+  </div>
+
+  <div class="panel p7">
+    <span class="num">07</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">Playfair Italic</div>
+  </div>
+
+  <div class="panel p8">
+    <span class="num">08</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">Impact Poster</div>
+  </div>
+
+  <div class="panel p9">
+    <span class="num">09</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">Outline Stroke</div>
+  </div>
+
+  <div class="panel p10">
+    <span class="num">10</span>
+    <div class="mark">Ø</div>
+    <div class="sub">FØLD</div>
+    <div class="label">Brand Mark Lockup</div>
+  </div>
+
+  <div class="panel p11">
+    <span class="num">11</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">Raleway Hairline</div>
+  </div>
+
+  <div class="panel p12">
+    <span class="num">12</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">Unbounded Bold</div>
+  </div>
+
+  <div class="panel p13">
+    <span class="num">13</span>
+    <div class="logo"><span class="f">F</span><span class="o">Ø</span><span class="ld">LD</span></div>
+    <div class="label">Split Color</div>
+  </div>
+
+  <div class="panel p14">
+    <span class="num">14</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">DM Serif Italic</div>
+  </div>
+
+  <div class="panel p15">
+    <span class="num">15</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">Condensed Light</div>
+  </div>
+
+  <div class="panel p16">
+    <span class="num">16</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">Charcoal × Gold</div>
+  </div>
+
+  <div class="panel p17">
+    <span class="num">17</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">Oswald Light</div>
+  </div>
+
+  <div class="panel p18">
+    <span class="num">18</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">Italic Block</div>
+  </div>
+
+  <div class="panel p19">
+    <span class="num">19</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">Rule Lines</div>
+  </div>
+
+  <div class="panel p20">
+    <span class="num">20</span>
+    <div class="logo">F<span class="o">Ø</span>LD</div>
+    <div class="label">Unbounded Black</div>
+  </div>
+
+</div>
+
+</body>
+</html>
