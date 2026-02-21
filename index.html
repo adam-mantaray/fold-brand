@@ -6,7 +6,7 @@
 <title>FØLD — Logo Explorations</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,200;0,300;0,600;0,700;0,800;0,900;1,700;1,900&family=Big+Shoulders+Display:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,700;0,900&family=Oswald:wght@200;300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Raleway:wght@100;200;300;700;900&family=Space+Grotesk:wght@300;400;500;700&family=Anton&family=Unbounded:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,200;0,300;0,600;0,700;0,800;0,900;1,700;1,900&family=Big+Shoulders+Display:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,700;0,900&family=Oswald:wght@200;300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Raleway:wght@100;200;300;700;900&family=Space+Grotesk:wght@300;400;500;700&family=Anton&family=Unbounded:wght@300;400;700;900&family=Zilla+Slab:wght@300;400;600;700&family=Bitter:wght@300;400;700;900&family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,700;0,900;1,700&family=Jost:wght@100;200;300;400;700;900&family=Nunito:wght@200;300;400;700;900&family=Rubik:ital,wght@0,300;0,400;0,700;0,900;1,700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -472,6 +472,127 @@ body {
   padding-left: clamp(2px,.7vw,4px);
 }
 
+/* ================================================================
+   ██████  SLAB
+================================================================ */
+.sl1 { background: var(--cream); }
+.sl1 .logo { font-family:'Zilla Slab',serif; font-weight:700; letter-spacing:.02em; color:var(--charcoal); font-size:calc(var(--logo)*.92); }
+.sl1 .o { color:var(--orange); }
+.sl1 .lbl,.sl1 .num { color:#C8B89A; }
+
+.sl2 { background: var(--charcoal); }
+.sl2 .logo { font-family:'Bitter',serif; font-weight:900; letter-spacing:.02em; color:var(--white); font-size:calc(var(--logo)*.88); }
+.sl2 .o { color:var(--orange); }
+.sl2 .lbl { color:#555; } .sl2 .num { color:#444; }
+
+.sl3 { background: var(--orange); }
+.sl3 .logo { font-family:'Zilla Slab',serif; font-weight:300; letter-spacing:.08em; color:var(--white); font-size:calc(var(--logo)*.85); }
+.sl3 .o { color:var(--yellow); }
+.sl3 .lbl { color:rgba(255,255,255,.38); } .sl3 .num { color:rgba(255,255,255,.28); }
+
+.sl4 { background: var(--white); }
+.sl4 .logo { font-family:'Bitter',serif; font-weight:300; letter-spacing:.12em; color:var(--charcoal); font-size:calc(var(--logo)*.8); padding-left:.12em; }
+.sl4 .o { color:var(--orange); }
+
+/* ================================================================
+   ██████  GEOMETRIC / WIDE
+================================================================ */
+.g1 { background: var(--white); }
+.g1 .logo { font-family:'Jost',sans-serif; font-weight:900; letter-spacing:.04em; color:var(--charcoal); }
+.g1 .o { color:var(--orange); }
+
+.g2 { background: var(--cream); }
+.g2 .logo { font-family:'Nunito',sans-serif; font-weight:900; letter-spacing:-.01em; color:var(--charcoal); font-size:calc(var(--logo)*.9); }
+.g2 .o { color:var(--orange); }
+.g2 .lbl,.g2 .num { color:#C8B89A; }
+
+.g3 { background: var(--charcoal); }
+.g3 .logo { font-family:'Exo 2',sans-serif; font-weight:900; font-style:italic; letter-spacing:.02em; color:var(--white); }
+.g3 .o { color:var(--orange); }
+.g3 .lbl { color:#555; } .g3 .num { color:#444; }
+
+.g4 { background: var(--white); }
+.g4 .logo { font-family:'Jost',sans-serif; font-weight:100; letter-spacing:.2em; padding-left:.2em; color:var(--charcoal); font-size:calc(var(--logo)*.74); }
+.g4 .o { color:var(--orange); }
+
+/* ================================================================
+   ██████  COLOR PLAY
+================================================================ */
+/* split bg left orange, right charcoal */
+.cp1 {
+  background: linear-gradient(90deg, var(--orange) 50%, var(--charcoal) 50%);
+}
+.cp1 .logo { font-family:'Big Shoulders Display',cursive; font-weight:900; letter-spacing:-.02em; color:var(--white); }
+.cp1 .lbl { color:rgba(255,255,255,.4); } .cp1 .num { color:rgba(255,255,255,.3); }
+
+/* orange bg, Ø huge behind text */
+.cp2 { background: var(--cream); position:relative; overflow:hidden; }
+.cp2 .bg-o {
+  position:absolute;
+  font-family:'Big Shoulders Display',cursive;
+  font-weight:900;
+  font-size: clamp(120px, 40vw, 340px);
+  color: var(--orange);
+  opacity:.08;
+  line-height:1;
+  top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+  user-select:none;
+}
+.cp2 .logo { font-family:'Big Shoulders Display',cursive; font-weight:900; letter-spacing:-.02em; color:var(--charcoal); position:relative; z-index:1; }
+.cp2 .o { color:var(--orange); }
+.cp2 .lbl,.cp2 .num { color:#C8B89A; }
+
+/* two-tone: FØ yellow, LD orange */
+.cp3 { background: var(--charcoal); }
+.cp3 .logo { font-family:'Barlow Condensed',sans-serif; font-weight:800; letter-spacing:.04em; line-height:1; }
+.cp3 .fo { color:var(--yellow); }
+.cp3 .ld { color:var(--orange); }
+.cp3 .lbl { color:#555; } .cp3 .num { color:#444; }
+
+/* reversed — white bg block behind orange text */
+.cp4 { background: var(--white); }
+.cp4 .logo-wrap {
+  background: var(--charcoal);
+  padding: clamp(10px,3vw,18px) clamp(16px,4.5vw,32px);
+}
+.cp4 .logo { font-family:'Barlow Condensed',sans-serif; font-weight:700; letter-spacing:.05em; color:var(--white); font-size:calc(var(--logo)*.9); }
+.cp4 .o { color:var(--yellow); }
+
+/* ================================================================
+   ██████  STACKED
+================================================================ */
+.stk { display:flex; flex-direction:column; align-items:center; justify-content:center; line-height:1; gap:0; }
+.stk-letter {
+  font-size: clamp(32px, 10vw, 80px);
+  line-height:.92;
+  text-transform:uppercase;
+  user-select:none;
+}
+
+.sk1 { background: var(--white); }
+.sk1 .stk-letter { font-family:'Big Shoulders Display',cursive; font-weight:900; color:var(--charcoal); letter-spacing:-.02em; }
+.sk1 .stk-letter.o { color:var(--orange); }
+
+.sk2 { background: var(--charcoal); }
+.sk2 .stk-letter { font-family:'Barlow Condensed',sans-serif; font-weight:800; letter-spacing:.04em; }
+.sk2 .stk-letter:nth-child(1) { color:var(--white); }
+.sk2 .stk-letter:nth-child(2) { color:var(--orange); }
+.sk2 .stk-letter:nth-child(3) { color:var(--white); }
+.sk2 .stk-letter:nth-child(4) { color:var(--yellow); }
+.sk2 .lbl { color:#555; } .sk2 .num { color:#444; }
+
+.sk3 { background: var(--cream); }
+.sk3 .stk-letter { font-family:'Cormorant Garamond',serif; font-weight:300; letter-spacing:.08em; color:var(--charcoal); font-size:clamp(28px,9vw,72px); }
+.sk3 .stk-letter.o { color:var(--orange); }
+.sk3 .lbl,.sk3 .num { color:#C8B89A; }
+
+.sk4 { background: var(--orange); }
+.sk4 .stk-letter { font-family:'Montserrat',sans-serif; font-weight:100; letter-spacing:.1em; color:var(--white); font-size:clamp(24px,8vw,64px); }
+.sk4 .stk-letter.o { color:var(--yellow); }
+.sk4 .lbl { color:rgba(255,255,255,.38); } .sk4 .num { color:rgba(255,255,255,.28); }
+
 /* ST6 — Ø circle stamp dark */
 .st6 { background: var(--orange); }
 .st6 .stamp {
@@ -668,6 +789,117 @@ body {
       <div class="lbl">Circle Dark</div>
     </div>
 
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     SLAB
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">
+    <span>Slab Serif</span>
+    <div class="divider"></div>
+    <em>Rectangular serifs, sturdy &amp; warm</em>
+  </div>
+  <div class="grid">
+    <div class="panel sl1"><span class="num">31</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Zilla Bold</div></div>
+    <div class="panel sl2"><span class="num">32</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Bitter Heavy Dark</div></div>
+    <div class="panel sl3"><span class="num">33</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Slab Light Orange</div></div>
+    <div class="panel sl4"><span class="num">34</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Bitter Thin</div></div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     GEOMETRIC / WIDE
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">
+    <span>Geometric</span>
+    <div class="divider"></div>
+    <em>Precise, modern proportions</em>
+  </div>
+  <div class="grid">
+    <div class="panel g1"><span class="num">35</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Jost Black</div></div>
+    <div class="panel g2"><span class="num">36</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Nunito Heavy</div></div>
+    <div class="panel g3"><span class="num">37</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Exo 2 Italic</div></div>
+    <div class="panel g4"><span class="num">38</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Jost Thin</div></div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     COLOR PLAY
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">
+    <span>Color Play</span>
+    <div class="divider"></div>
+    <em>Split, layered &amp; two-tone treatments</em>
+  </div>
+  <div class="grid">
+    <div class="panel cp1"><span class="num">39</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Split BG</div></div>
+    <div class="panel cp2"><span class="num">40</span>
+      <div class="bg-o">Ø</div>
+      <div class="logo">F<span class="o">Ø</span>LD</div>
+      <div class="lbl">Ghost Ø</div>
+    </div>
+    <div class="panel cp3"><span class="num">41</span><div class="logo"><span class="fo">FØ</span><span class="ld">LD</span></div><div class="lbl">Two-tone</div></div>
+    <div class="panel cp4"><span class="num">42</span>
+      <div class="logo-wrap"><div class="logo">F<span class="o">Ø</span>LD</div></div>
+      <div class="lbl">Block Reversed</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     STACKED
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">
+    <span>Stacked</span>
+    <div class="divider"></div>
+    <em>Vertical letterforms</em>
+  </div>
+  <div class="grid">
+    <div class="panel sk1"><span class="num">43</span>
+      <div class="stk">
+        <div class="stk-letter">F</div>
+        <div class="stk-letter o">Ø</div>
+        <div class="stk-letter">L</div>
+        <div class="stk-letter">D</div>
+      </div>
+      <div class="lbl">Bold Stack</div>
+    </div>
+    <div class="panel sk2"><span class="num">44</span>
+      <div class="stk">
+        <div class="stk-letter">F</div>
+        <div class="stk-letter">Ø</div>
+        <div class="stk-letter">L</div>
+        <div class="stk-letter">D</div>
+      </div>
+      <div class="lbl">Stack Alternating</div>
+    </div>
+    <div class="panel sk3"><span class="num">45</span>
+      <div class="stk">
+        <div class="stk-letter">F</div>
+        <div class="stk-letter o">Ø</div>
+        <div class="stk-letter">L</div>
+        <div class="stk-letter">D</div>
+      </div>
+      <div class="lbl">Serif Stack</div>
+    </div>
+    <div class="panel sk4"><span class="num">46</span>
+      <div class="stk">
+        <div class="stk-letter">F</div>
+        <div class="stk-letter o">Ø</div>
+        <div class="stk-letter">L</div>
+        <div class="stk-letter">D</div>
+      </div>
+      <div class="lbl">Thin Stack Orange</div>
+    </div>
   </div>
 </div>
 
