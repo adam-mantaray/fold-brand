@@ -6,50 +6,44 @@
 <title>FØLD — Logo Explorations</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,200;0,300;0,600;0,700;0,800;0,900;1,700;1,900&family=Big+Shoulders+Display:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,700;0,900&family=Oswald:wght@200;300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,700;0,900&family=Space+Grotesk:wght@300;400;500;700&family=Anton&family=Unbounded:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,200;0,300;0,600;0,700;0,800;0,900;1,700;1,900&family=Big+Shoulders+Display:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,700;0,900&family=Oswald:wght@200;300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Raleway:wght@100;200;300;700;900&family=Space+Grotesk:wght@300;400;500;700&family=Anton&family=Unbounded:wght@300;400;700;900&display=swap" rel="stylesheet">
 <style>
-/* ——— RESET ——— */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* ——— TOKENS ——— */
 :root {
-  --orange: #FF5722;
-  --yellow: #FFB300;
-  --charcoal: #1A1A1A;
-  --cream: #FFF8F0;
-  --offwhite: #FAFAF8;
-  --bg: #EDEBE6;
-  --gap: 1.5px;
-  --panel-h: 44vw;
-  --logo-size: clamp(40px, 12vw, 108px);
+  --orange:  #FF5722;
+  --yellow:  #FFB300;
+  --charcoal:#1A1A1A;
+  --cream:   #FFF8F0;
+  --white:   #FAFAF8;
+  --bg:      #EDEAE4;
+  --gap:     1.5px;
+  --logo:    clamp(38px, 11.5vw, 104px);
 }
 
-/* ——— BASE ——— */
 html { -webkit-text-size-adjust: 100%; }
 
 body {
   background: var(--bg);
   font-family: 'Space Grotesk', sans-serif;
-  min-height: 100dvh;
+  padding-bottom: 60px;
 }
 
-/* ——— HEADER ——— */
-header {
-  padding: clamp(24px, 6vw, 60px) clamp(16px, 4vw, 40px) clamp(20px, 5vw, 48px);
+/* ——— PAGE HEADER ——— */
+.page-header {
   text-align: center;
+  padding: clamp(28px, 7vw, 64px) 20px clamp(24px, 6vw, 52px);
 }
-
-header h1 {
+.page-header h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(8px, 2vw, 11px);
   font-weight: 300;
-  letter-spacing: clamp(3px, 1vw, 6px);
+  letter-spacing: clamp(3px, 1vw, 7px);
   text-transform: uppercase;
   color: #888;
   margin-bottom: 8px;
 }
-
-header p {
+.page-header p {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(7px, 1.6vw, 9px);
   font-weight: 300;
@@ -58,28 +52,50 @@ header p {
   color: #AAA;
 }
 
-/* ——— GRID — mobile first: 2 cols ——— */
+/* ——— SECTION ——— */
+.section { margin-bottom: var(--gap); }
+
+.section-label {
+  padding: clamp(14px, 3.5vw, 22px) clamp(14px, 3.5vw, 28px) clamp(10px, 2.5vw, 16px);
+  background: var(--bg);
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.section-label span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(7.5px, 1.8vw, 9.5px);
+  font-weight: 400;
+  letter-spacing: clamp(3px, 1vw, 5px);
+  text-transform: uppercase;
+  color: #888;
+}
+.section-label em {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(6.5px, 1.4vw, 8px);
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #BBB;
+}
+.divider {
+  height: 1px;
+  background: #D8D4CD;
+  flex: 1;
+}
+
+/* ——— GRID ——— */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--gap);
   background: #C8C4BC;
 }
-
-/* tablet: 3 cols */
-@media (min-width: 600px) {
+@media (min-width: 580px) {
   .grid { grid-template-columns: repeat(3, 1fr); }
-  :root { --panel-h: 30vw; }
 }
-
-/* desktop: 4 cols */
-@media (min-width: 900px) {
+@media (min-width: 880px) {
   .grid { grid-template-columns: repeat(4, 1fr); }
-  :root { --panel-h: 22vw; }
-}
-
-@media (min-width: 1400px) {
-  :root { --panel-h: 280px; }
 }
 
 /* ——— PANEL ——— */
@@ -89,435 +105,570 @@ header p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--offwhite);
-  height: var(--panel-h);
-  padding: 16px 12px 36px;
+  background: var(--white);
+  height: clamp(130px, 44vw, 270px);
+  padding: 14px 10px 34px;
   overflow: hidden;
+}
+@media (min-width: 580px) {
+  .panel { height: clamp(130px, 30vw, 270px); }
+}
+@media (min-width: 880px) {
+  .panel { height: clamp(130px, 22vw, 270px); }
 }
 
 .num {
   position: absolute;
-  top: 10px;
-  left: 12px;
+  top: 9px; left: 11px;
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(7px, 1.5vw, 9px);
+  font-size: clamp(6.5px, 1.4vw, 8.5px);
   font-weight: 300;
   letter-spacing: 1px;
-  color: #D0CCBF;
+  color: #D4D0C8;
   line-height: 1;
 }
-
-.label {
+.lbl {
   position: absolute;
-  bottom: 11px;
-  left: 0; right: 0;
+  bottom: 10px; left: 0; right: 0;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(6px, 1.4vw, 8px);
+  font-size: clamp(5.5px, 1.3vw, 7.5px);
   font-weight: 400;
-  letter-spacing: clamp(1.5px, 0.5vw, 3px);
+  letter-spacing: clamp(1.5px, 0.5vw, 2.5px);
   text-transform: uppercase;
-  color: #BCBCB0;
+  color: #BDBDB0;
 }
 
-/* ——— LOGO BASE SIZE ——— */
 .logo {
-  font-size: var(--logo-size);
+  font-size: var(--logo);
   line-height: 1;
   text-transform: uppercase;
+  user-select: none;
 }
-
 
 /* ================================================================
-   VARIATION STYLES
+   ██████  DISPLAY
+================================================================ */
+.d1 { background: var(--white); }
+.d1 .logo { font-family:'Big Shoulders Display',cursive; font-weight:900; letter-spacing:-0.02em; color:var(--charcoal); }
+.d1 .o { color:var(--orange); }
+
+.d2 { background: var(--yellow); }
+.d2 .logo { font-family:'Anton',sans-serif; letter-spacing:0.04em; color:var(--charcoal); }
+.d2 .o { color:var(--orange); }
+.d2 .lbl,.d2 .num { color:rgba(0,0,0,.22); }
+
+.d3 { background: var(--charcoal); }
+.d3 .logo { font-family:'Unbounded',sans-serif; font-weight:900; letter-spacing:-.01em; color:var(--white); font-size:calc(var(--logo)*.6); }
+.d3 .o { color:var(--orange); }
+.d3 .lbl { color:#555; } .d3 .num { color:#444; }
+
+.d4 { background: var(--orange); }
+.d4 .logo { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-style:italic; letter-spacing:.02em; color:var(--white); }
+.d4 .o { color:var(--yellow); }
+.d4 .lbl { color:rgba(255,255,255,.35); } .d4 .num { color:rgba(255,255,255,.28); }
+
+/* ================================================================
+   ██████  CONDENSED
+================================================================ */
+.c1 { background: var(--charcoal); }
+.c1 .logo { font-family:'Barlow Condensed',sans-serif; font-weight:800; letter-spacing:.05em; color:var(--white); }
+.c1 .o { color:var(--orange); }
+.c1 .lbl { color:#555; } .c1 .num { color:#444; }
+
+.c2 { background: var(--orange); }
+.c2 .logo { font-family:'Barlow Condensed',sans-serif; font-weight:700; letter-spacing:.05em; color:var(--white); }
+.c2 .o { color:var(--yellow); }
+.c2 .lbl { color:rgba(255,255,255,.35); } .c2 .num { color:rgba(255,255,255,.28); }
+
+.c3 { background: var(--white); }
+.c3 .logo { font-family:'Barlow Condensed',sans-serif; font-weight:200; letter-spacing:.1em; padding-left:.1em; color:var(--charcoal); }
+.c3 .o { color:var(--orange); }
+
+.c4 { background: var(--cream); }
+.c4 .logo { font-family:'Oswald',sans-serif; font-weight:200; letter-spacing:.14em; padding-left:.14em; color:var(--charcoal); }
+.c4 .o { color:var(--orange); }
+.c4 .lbl,.c4 .num { color:#C8B89A; }
+
+/* ================================================================
+   ██████  SERIF
+================================================================ */
+.s1 { background: var(--cream); }
+.s1 .logo { font-family:'Cormorant Garamond',serif; font-weight:300; letter-spacing:.1em; color:var(--charcoal); font-size:calc(var(--logo)*.88); }
+.s1 .o { color:var(--orange); }
+.s1 .lbl,.s1 .num { color:#C8B89A; }
+
+.s2 { background: var(--white); }
+.s2 .logo { font-family:'Playfair Display',serif; font-weight:700; font-style:italic; letter-spacing:.02em; color:var(--charcoal); font-size:calc(var(--logo)*.88); }
+.s2 .o { color:var(--orange); }
+
+.s3 { background: var(--cream); }
+.s3 .logo { font-family:'DM Serif Display',serif; font-style:italic; letter-spacing:.04em; color:var(--charcoal); font-size:calc(var(--logo)*.9); }
+.s3 .o { color:var(--orange); }
+.s3 .lbl,.s3 .num { color:#C8B89A; }
+
+.s4 { background: var(--charcoal); }
+.s4 .logo { font-family:'Cormorant Garamond',serif; font-weight:600; letter-spacing:.08em; color:var(--yellow); font-size:calc(var(--logo)*.9); }
+.s4 .o { color:var(--orange); }
+.s4 .lbl { color:#555; } .s4 .num { color:#444; }
+
+/* ================================================================
+   ██████  MINIMAL
+================================================================ */
+.m1 { background: var(--white); }
+.m1 .logo { font-family:'Montserrat',sans-serif; font-weight:100; letter-spacing:.22em; padding-left:.22em; color:var(--charcoal); font-size:calc(var(--logo)*.76); }
+.m1 .o { color:var(--orange); }
+
+.m2 { background: var(--white); }
+.m2 .logo { font-family:'Raleway',sans-serif; font-weight:100; letter-spacing:.12em; padding-left:.12em; color:var(--charcoal); font-size:calc(var(--logo)*.86); }
+.m2 .o { color:var(--orange); }
+
+.m3 { background: var(--cream); }
+.m3::before,.m3::after { content:''; position:absolute; left:14%; right:14%; height:1px; background:var(--orange); opacity:.3; }
+.m3::before { top:22%; } .m3::after { bottom:28%; }
+.m3 .logo { font-family:'Montserrat',sans-serif; font-weight:300; letter-spacing:.18em; padding-left:.18em; color:var(--charcoal); font-size:calc(var(--logo)*.52); }
+.m3 .o { color:var(--orange); }
+.m3 .lbl,.m3 .num { color:#C8B89A; }
+
+.m4 { background: var(--cream); }
+.m4 .logo { font-family:'Oswald',sans-serif; font-weight:700; letter-spacing:.06em; color:var(--yellow); }
+.m4 .o { color:var(--orange); }
+.m4 .lbl,.m4 .num { color:#C8B89A; }
+
+/* ================================================================
+   ██████  Ø MARK
+================================================================ */
+.mark-panel { background: var(--white); }
+.big-o {
+  font-size: clamp(64px, 22vw, 160px);
+  line-height: 1;
+  user-select: none;
+}
+
+.o1 { background: var(--white); }
+.o1 .big-o { font-family:'Big Shoulders Display',cursive; font-weight:900; color:var(--orange); }
+
+.o2 { background: var(--charcoal); }
+.o2 .big-o { font-family:'Big Shoulders Display',cursive; font-weight:900; color:var(--white); }
+.o2 .lbl { color:#555; } .o2 .num { color:#444; }
+
+.o3 { background: var(--white); }
+.o3 .big-o { font-family:'Barlow Condensed',sans-serif; font-weight:800; color:transparent; -webkit-text-stroke:2.5px var(--orange); }
+
+.o4 { background: var(--orange); }
+.o4 .big-o { font-family:'Big Shoulders Display',cursive; font-weight:900; color:var(--yellow); }
+.o4 .lbl { color:rgba(255,255,255,.4); } .o4 .num { color:rgba(255,255,255,.3); }
+
+.o5 { background: var(--cream); }
+.o5 .big-o { font-family:'Cormorant Garamond',serif; font-weight:300; color:var(--charcoal); font-style:italic; }
+.o5 .lbl,.o5 .num { color:#C8B89A; }
+
+.o6 { background: var(--charcoal); }
+.o6 .big-o { font-family:'Cormorant Garamond',serif; font-weight:300; color:var(--yellow); font-style:italic; }
+.o6 .lbl { color:#555; } .o6 .num { color:#444; }
+
+/* Ø + wordmark sub lockup */
+.o-lockup { display:flex; flex-direction:column; align-items:center; gap:4px; }
+.o-lockup .big-o { font-size: clamp(50px, 16vw, 110px); }
+.o-lockup .sub {
+  font-family:'Montserrat',sans-serif;
+  font-size: clamp(7px, 2vw, 13px);
+  font-weight:300;
+  letter-spacing: clamp(6px, 2vw, 12px);
+  text-transform:uppercase;
+  padding-left: clamp(6px, 2vw, 12px);
+}
+
+.o7 { background: var(--cream); }
+.o7 .big-o { font-family:'Big Shoulders Display',cursive; font-weight:900; color:var(--orange); }
+.o7 .sub { color:var(--charcoal); }
+.o7 .lbl,.o7 .num { color:#C8B89A; }
+
+.o8 { background: var(--charcoal); }
+.o8 .big-o { font-family:'Barlow Condensed',sans-serif; font-weight:800; color:var(--orange); }
+.o8 .sub { color:var(--white); }
+.o8 .lbl { color:#555; } .o8 .num { color:#444; }
+
+/* ================================================================
+   ██████  STAMPS
 ================================================================ */
 
-/* 01 — ARCHITECTURAL */
-.p1 { background: var(--offwhite); }
-.p1 .logo {
-  font-family: 'Big Shoulders Display', cursive;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  color: var(--charcoal);
+/* ---- circular stamp ---- */
+.stamp-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: relative;
 }
-.p1 .o { color: var(--orange); }
 
-/* 02 — EDITORIAL SERIF */
-.p2 { background: var(--cream); }
-.p2 .logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 300;
-  letter-spacing: 0.1em;
-  color: var(--charcoal);
-  font-size: calc(var(--logo-size) * 0.88);
+/* text on circle path — CSS only approximation using letter-spacing */
+.stamp-circle-text {
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.p2 .o { color: var(--orange); }
-.p2 .label, .p2 .num { color: #C8B89A; }
 
-/* 03 — DARK CONDENSED */
-.p3 { background: var(--charcoal); }
-.p3 .logo {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  color: #FAFAFA;
+/* ST1 — Classic circular badge */
+.st1 { background: var(--white); }
+.st1 .stamp {
+  width: clamp(90px, 26vw, 175px);
+  height: clamp(90px, 26vw, 175px);
+  border-radius: 50%;
+  border: clamp(2.5px, .6vw, 4px) solid var(--orange);
+  outline: clamp(1px, .3vw, 2px) solid var(--orange);
+  outline-offset: clamp(4px, 1.2vw, 8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  position: relative;
 }
-.p3 .o { color: var(--orange); }
-.p3 .label { color: #555; }
-.p3 .num  { color: #444; }
-
-/* 04 — ULTRA THIN */
-.p4 { background: #FAFAFA; }
-.p4 .logo {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 100;
-  letter-spacing: 0.22em;
-  padding-left: 0.22em;
-  color: var(--charcoal);
-  font-size: calc(var(--logo-size) * 0.78);
+.st1 .stamp-logo {
+  font-family:'Big Shoulders Display',cursive;
+  font-weight:900;
+  font-size: clamp(26px, 7.5vw, 58px);
+  letter-spacing:-.02em;
+  color:var(--charcoal);
+  line-height:1;
 }
-.p4 .o { color: var(--orange); }
-
-/* 05 — WARM GOLDEN */
-.p5 { background: var(--cream); }
-.p5 .logo {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--yellow);
+.st1 .stamp-logo .o { color:var(--orange); }
+.st1 .stamp-sub {
+  font-family:'Montserrat',sans-serif;
+  font-weight:300;
+  font-size: clamp(5px, 1.4vw, 8px);
+  letter-spacing: clamp(3px, .9vw, 6px);
+  text-transform:uppercase;
+  color: #888;
+  padding-left: clamp(3px, .9vw, 6px);
 }
-.p5 .o { color: var(--orange); }
-.p5 .label, .p5 .num { color: #C8B89A; }
 
-/* 06 — ORANGE BLOCK */
-.p6 { background: var(--orange); }
-.p6 .logo {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #FAFAFA;
+/* ST2 — Thick ring, white on orange */
+.st2 { background: var(--orange); }
+.st2 .stamp {
+  width: clamp(90px, 26vw, 175px);
+  height: clamp(90px, 26vw, 175px);
+  border-radius: 50%;
+  border: clamp(3px, .8vw, 5px) solid rgba(255,255,255,.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
 }
-.p6 .o { color: var(--yellow); }
-.p6 .label { color: rgba(255,255,255,0.35); }
-.p6 .num   { color: rgba(255,255,255,0.28); }
-
-/* 07 — PLAYFAIR ITALIC */
-.p7 { background: var(--offwhite); }
-.p7 .logo {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-style: italic;
-  letter-spacing: 0.02em;
-  color: var(--charcoal);
-  font-size: calc(var(--logo-size) * 0.88);
+.st2 .stamp-logo {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;
+  font-size: clamp(28px, 8vw, 62px);
+  letter-spacing:.04em;
+  color: var(--white);
+  line-height:1;
 }
-.p7 .o { color: var(--orange); }
-
-/* 08 — IMPACT POSTER */
-.p8 { background: var(--yellow); }
-.p8 .logo {
-  font-family: 'Anton', sans-serif;
-  letter-spacing: 0.04em;
-  color: var(--charcoal);
+.st2 .stamp-logo .o { color: var(--yellow); }
+.st2 .stamp-sub {
+  font-family:'Montserrat',sans-serif;
+  font-weight:300;
+  font-size: clamp(4.5px, 1.3vw, 7.5px);
+  letter-spacing: clamp(3px, .8vw, 5px);
+  text-transform:uppercase;
+  color: rgba(255,255,255,.65);
+  padding-left: clamp(3px, .8vw, 5px);
 }
-.p8 .o { color: var(--orange); }
-.p8 .label, .p8 .num { color: rgba(0,0,0,0.22); }
+.st2 .lbl { color:rgba(255,255,255,.35); } .st2 .num { color:rgba(255,255,255,.28); }
 
-/* 09 — OUTLINE STROKE */
-.p9 { background: #FAFAFA; }
-.p9 .logo {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--charcoal);
+/* ST3 — Ø as circular stamp/seal */
+.st3 { background: var(--charcoal); }
+.st3 .stamp {
+  width: clamp(86px, 25vw, 168px);
+  height: clamp(86px, 25vw, 168px);
+  border-radius: 50%;
+  border: clamp(2px, .5vw, 3.5px) solid var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.p9 .o { -webkit-text-stroke: 2px var(--orange); }
-
-/* 10 — BRAND MARK LOCKUP */
-.p10 { background: var(--cream); }
-.p10 .mark {
-  font-family: 'Big Shoulders Display', cursive;
-  font-size: clamp(64px, 18vw, 130px);
-  font-weight: 900;
+.st3 .inner {
+  font-family:'Big Shoulders Display',cursive;
+  font-weight:900;
+  font-size: clamp(48px, 14vw, 110px);
   color: var(--orange);
-  line-height: 0.9;
-  text-align: center;
+  line-height:1;
 }
-.p10 .sub {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(8px, 2vw, 14px);
-  font-weight: 300;
-  letter-spacing: clamp(6px, 2vw, 12px);
+.st3 .lbl { color:#555; } .st3 .num { color:#444; }
+
+/* ST4 — Oval / pill stamp */
+.st4 { background: var(--cream); }
+.st4 .stamp {
+  padding: clamp(10px,3vw,20px) clamp(18px,5.5vw,42px);
+  border-radius: 100px;
+  border: clamp(2px,.5vw,3px) solid var(--charcoal);
+  outline: clamp(1px,.3vw,1.5px) solid var(--charcoal);
+  outline-offset: clamp(3px,1vw,6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+.st4 .stamp-logo {
+  font-family:'Big Shoulders Display',cursive;
+  font-weight:900;
+  font-size: clamp(22px, 6.5vw, 52px);
+  letter-spacing:-.01em;
   color: var(--charcoal);
+  line-height:1;
+}
+.st4 .stamp-logo .o { color:var(--orange); }
+.st4 .stamp-sub {
+  font-family:'Montserrat',sans-serif;
+  font-weight:300;
+  font-size: clamp(4.5px, 1.2vw, 7px);
+  letter-spacing: clamp(2.5px,.8vw, 4.5px);
   text-transform: uppercase;
-  padding-left: clamp(6px, 2vw, 12px);
-  margin-top: 6px;
+  color: #999;
+  padding-left: clamp(2.5px,.8vw,4.5px);
 }
-.p10 .label, .p10 .num { color: #C8B89A; }
+.st4 .lbl,.st4 .num { color:#C8B89A; }
 
-/* 11 — RALEWAY HAIRLINE */
-.p11 { background: var(--offwhite); }
-.p11 .logo {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 100;
-  letter-spacing: 0.12em;
-  padding-left: 0.12em;
-  color: var(--charcoal);
-  font-size: calc(var(--logo-size) * 0.88);
+/* ST5 — Square stamp with thick border */
+.st5 { background: var(--white); }
+.st5 .stamp {
+  padding: clamp(10px,3vw,20px) clamp(14px,4vw,30px);
+  border: clamp(2.5px,.7vw,4px) solid var(--orange);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  position: relative;
 }
-.p11 .o { color: var(--orange); }
-
-/* 12 — UNBOUNDED BOLD */
-.p12 { background: var(--charcoal); }
-.p12 .logo {
-  font-family: 'Unbounded', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: #FAFAFA;
-  font-size: calc(var(--logo-size) * 0.62);
-}
-.p12 .o { color: var(--orange); }
-.p12 .label { color: #555; }
-.p12 .num   { color: #444; }
-
-/* 13 — SPLIT COLOR */
-.p13 { background: #FAFAFA; }
-.p13 .logo {
-  font-family: 'Big Shoulders Display', cursive;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-}
-.p13 .f  { color: var(--orange); }
-.p13 .o  { color: var(--orange); }
-.p13 .ld { color: var(--charcoal); }
-
-/* 14 — DM SERIF ITALIC */
-.p14 { background: var(--cream); }
-.p14 .logo {
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  letter-spacing: 0.04em;
-  color: var(--charcoal);
-  font-size: calc(var(--logo-size) * 0.9);
-}
-.p14 .o { color: var(--orange); }
-.p14 .label, .p14 .num { color: #C8B89A; }
-
-/* 15 — CONDENSED LIGHT */
-.p15 { background: var(--offwhite); }
-.p15 .logo {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 200;
-  letter-spacing: 0.1em;
-  padding-left: 0.1em;
-  color: var(--charcoal);
-}
-.p15 .o { color: var(--orange); }
-
-/* 16 — CHARCOAL × GOLD */
-.p16 { background: var(--charcoal); }
-.p16 .logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--yellow);
-  font-size: calc(var(--logo-size) * 0.9);
-}
-.p16 .o { color: var(--orange); }
-.p16 .label { color: #555; }
-.p16 .num   { color: #444; }
-
-/* 17 — OSWALD LIGHT */
-.p17 { background: #FAFAFA; }
-.p17 .logo {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 200;
-  letter-spacing: 0.14em;
-  padding-left: 0.14em;
-  color: var(--charcoal);
-}
-.p17 .o { color: var(--orange); }
-
-/* 18 — ITALIC BLOCK */
-.p18 { background: var(--orange); }
-.p18 .logo {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-style: italic;
-  letter-spacing: 0.02em;
-  color: #FAFAFA;
-}
-.p18 .o { color: var(--yellow); }
-.p18 .label { color: rgba(255,255,255,0.35); }
-.p18 .num   { color: rgba(255,255,255,0.28); }
-
-/* 19 — RULE LINES */
-.p19 { background: var(--cream); }
-.p19::before, .p19::after {
+.st5 .stamp::before {
   content: '';
   position: absolute;
-  left: 14%; right: 14%;
-  height: 1px;
-  background: var(--orange);
-  opacity: 0.35;
+  inset: clamp(3px,1vw,6px);
+  border: clamp(1px,.25vw,1.5px) solid var(--orange);
+  opacity: .4;
+  pointer-events: none;
 }
-.p19::before { top: 22%; }
-.p19::after  { bottom: 28%; }
-.p19 .logo {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-  letter-spacing: 0.18em;
-  padding-left: 0.18em;
+.st5 .stamp-logo {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;
+  font-size: clamp(24px, 7vw, 56px);
+  letter-spacing:.06em;
   color: var(--charcoal);
-  font-size: calc(var(--logo-size) * 0.55);
+  line-height:1;
 }
-.p19 .o { color: var(--orange); }
-.p19 .label, .p19 .num { color: #C8B89A; }
+.st5 .stamp-logo .o { color:var(--orange); }
+.st5 .stamp-sub {
+  font-family:'Montserrat',sans-serif;
+  font-weight:300;
+  font-size: clamp(4px, 1.1vw, 6.5px);
+  letter-spacing: clamp(2px,.7vw,4px);
+  text-transform: uppercase;
+  color: #999;
+  padding-left: clamp(2px,.7vw,4px);
+}
 
-/* 20 — UNBOUNDED BLACK */
-.p20 { background: var(--offwhite); }
-.p20 .logo {
-  font-family: 'Unbounded', sans-serif;
-  font-weight: 900;
-  letter-spacing: -0.01em;
-  color: var(--charcoal);
-  font-size: calc(var(--logo-size) * 0.62);
+/* ST6 — Ø circle stamp dark */
+.st6 { background: var(--orange); }
+.st6 .stamp {
+  width: clamp(86px, 25vw, 168px);
+  height: clamp(86px, 25vw, 168px);
+  border-radius: 50%;
+  background: var(--charcoal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
 }
-.p20 .o { color: var(--orange); }
+.st6 .inner {
+  font-family:'Big Shoulders Display',cursive;
+  font-weight:900;
+  font-size: clamp(42px, 12vw, 94px);
+  color: var(--white);
+  line-height:1;
+}
+.st6 .inner .o { color:var(--yellow); }
+.st6 .lbl { color:rgba(255,255,255,.38); } .st6 .num { color:rgba(255,255,255,.28); }
 
 </style>
 </head>
 <body>
 
-<header>
+<div class="page-header">
   <h1>FØLD — Logo Explorations</h1>
-  <p>20 Variations · Brand Colors · Select your direction</p>
-</header>
+  <p>Grouped by style · Select your direction</p>
+</div>
 
-<div class="grid">
 
-  <div class="panel p1">
-    <span class="num">01</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">Architectural</div>
+<!-- ════════════════════════════════════════════
+     DISPLAY
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">
+    <span>Display</span>
+    <div class="divider"></div>
+    <em>Heavy &amp; poster-scale</em>
   </div>
-
-  <div class="panel p2">
-    <span class="num">02</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">Editorial Serif</div>
+  <div class="grid">
+    <div class="panel d1"><span class="num">01</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Architectural</div></div>
+    <div class="panel d2"><span class="num">02</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Impact Poster</div></div>
+    <div class="panel d3"><span class="num">03</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Unbounded Black</div></div>
+    <div class="panel d4"><span class="num">04</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Italic Block</div></div>
   </div>
+</div>
 
-  <div class="panel p3">
-    <span class="num">03</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">Dark Condensed</div>
+
+<!-- ════════════════════════════════════════════
+     CONDENSED
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">
+    <span>Condensed</span>
+    <div class="divider"></div>
+    <em>Tall &amp; tight</em>
   </div>
-
-  <div class="panel p4">
-    <span class="num">04</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">Ultra Thin</div>
+  <div class="grid">
+    <div class="panel c1"><span class="num">05</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Dark Condensed</div></div>
+    <div class="panel c2"><span class="num">06</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Orange Block</div></div>
+    <div class="panel c3"><span class="num">07</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Condensed Light</div></div>
+    <div class="panel c4"><span class="num">08</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Oswald Light</div></div>
   </div>
+</div>
 
-  <div class="panel p5">
-    <span class="num">05</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">Warm Golden</div>
+
+<!-- ════════════════════════════════════════════
+     SERIF
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">
+    <span>Serif</span>
+    <div class="divider"></div>
+    <em>Elegant &amp; editorial</em>
   </div>
-
-  <div class="panel p6">
-    <span class="num">06</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">Orange Block</div>
+  <div class="grid">
+    <div class="panel s1"><span class="num">09</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Editorial Serif</div></div>
+    <div class="panel s2"><span class="num">10</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Playfair Italic</div></div>
+    <div class="panel s3"><span class="num">11</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">DM Serif Italic</div></div>
+    <div class="panel s4"><span class="num">12</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Charcoal × Gold</div></div>
   </div>
+</div>
 
-  <div class="panel p7">
-    <span class="num">07</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">Playfair Italic</div>
+
+<!-- ════════════════════════════════════════════
+     MINIMAL
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">
+    <span>Minimal</span>
+    <div class="divider"></div>
+    <em>Light &amp; airy</em>
   </div>
-
-  <div class="panel p8">
-    <span class="num">08</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">Impact Poster</div>
+  <div class="grid">
+    <div class="panel m1"><span class="num">13</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Ultra Thin</div></div>
+    <div class="panel m2"><span class="num">14</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Raleway Hairline</div></div>
+    <div class="panel m3"><span class="num">15</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Rule Lines</div></div>
+    <div class="panel m4"><span class="num">16</span><div class="logo">F<span class="o">Ø</span>LD</div><div class="lbl">Warm Golden</div></div>
   </div>
+</div>
 
-  <div class="panel p9">
-    <span class="num">09</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">Outline Stroke</div>
+
+<!-- ════════════════════════════════════════════
+     Ø MARK
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">
+    <span>Ø Mark</span>
+    <div class="divider"></div>
+    <em>Standalone brand symbol</em>
   </div>
-
-  <div class="panel p10">
-    <span class="num">10</span>
-    <div class="mark">Ø</div>
-    <div class="sub">FØLD</div>
-    <div class="label">Brand Mark</div>
+  <div class="grid">
+    <div class="panel o1"><span class="num">17</span><div class="big-o">Ø</div><div class="lbl">Orange on White</div></div>
+    <div class="panel o2"><span class="num">18</span><div class="big-o">Ø</div><div class="lbl">White on Dark</div></div>
+    <div class="panel o3"><span class="num">19</span><div class="big-o">Ø</div><div class="lbl">Outline Stroke</div></div>
+    <div class="panel o4"><span class="num">20</span><div class="big-o">Ø</div><div class="lbl">Yellow on Orange</div></div>
+    <div class="panel o5"><span class="num">21</span><div class="big-o">Ø</div><div class="lbl">Serif Light</div></div>
+    <div class="panel o6"><span class="num">22</span><div class="big-o">Ø</div><div class="lbl">Gold on Dark</div></div>
+    <div class="panel o7"><span class="num">23</span>
+      <div class="o-lockup">
+        <div class="big-o" style="font-family:'Big Shoulders Display',cursive;font-weight:900;color:var(--orange)">Ø</div>
+        <div class="sub" style="color:var(--charcoal)">FØLD</div>
+      </div>
+      <div class="lbl">Mark + Wordmark</div>
+    </div>
+    <div class="panel o8"><span class="num">24</span>
+      <div class="o-lockup">
+        <div class="big-o" style="font-family:'Barlow Condensed',sans-serif;font-weight:800;color:var(--orange)">Ø</div>
+        <div class="sub" style="color:var(--white)">FØLD</div>
+      </div>
+      <div class="lbl">Mark + Wordmark Dark</div>
+    </div>
   </div>
+</div>
 
-  <div class="panel p11">
-    <span class="num">11</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">Raleway Hairline</div>
+
+<!-- ════════════════════════════════════════════
+     STAMPS
+════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">
+    <span>Stamps &amp; Seals</span>
+    <div class="divider"></div>
+    <em>Badge &amp; seal formats</em>
   </div>
+  <div class="grid">
 
-  <div class="panel p12">
-    <span class="num">12</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">Unbounded Bold</div>
+    <div class="panel st1"><span class="num">25</span>
+      <div class="stamp">
+        <div class="stamp-logo">F<span class="o">Ø</span>LD</div>
+        <div class="stamp-sub">Pizza · Cairo</div>
+      </div>
+      <div class="lbl">Circle Seal</div>
+    </div>
+
+    <div class="panel st2"><span class="num">26</span>
+      <div class="stamp">
+        <div class="stamp-logo">F<span class="o">Ø</span>LD</div>
+        <div class="stamp-sub">Est. 2026</div>
+      </div>
+      <div class="lbl">Circle Orange</div>
+    </div>
+
+    <div class="panel st3"><span class="num">27</span>
+      <div class="stamp">
+        <div class="inner">Ø</div>
+      </div>
+      <div class="lbl">Ø Circle Stamp</div>
+    </div>
+
+    <div class="panel st4"><span class="num">28</span>
+      <div class="stamp">
+        <div class="stamp-logo">F<span class="o">Ø</span>LD</div>
+        <div class="stamp-sub">Slice · Sip · Stay</div>
+      </div>
+      <div class="lbl">Oval Seal</div>
+    </div>
+
+    <div class="panel st5"><span class="num">29</span>
+      <div class="stamp">
+        <div class="stamp-logo">F<span class="o">Ø</span>LD</div>
+        <div class="stamp-sub">NYC Style Pizza</div>
+      </div>
+      <div class="lbl">Square Stamp</div>
+    </div>
+
+    <div class="panel st6"><span class="num">30</span>
+      <div class="stamp">
+        <div class="inner">F<span class="o">Ø</span>LD</div>
+      </div>
+      <div class="lbl">Circle Dark</div>
+    </div>
+
   </div>
-
-  <div class="panel p13">
-    <span class="num">13</span>
-    <div class="logo"><span class="f">F</span><span class="o">Ø</span><span class="ld">LD</span></div>
-    <div class="label">Split Color</div>
-  </div>
-
-  <div class="panel p14">
-    <span class="num">14</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">DM Serif Italic</div>
-  </div>
-
-  <div class="panel p15">
-    <span class="num">15</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">Condensed Light</div>
-  </div>
-
-  <div class="panel p16">
-    <span class="num">16</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">Charcoal × Gold</div>
-  </div>
-
-  <div class="panel p17">
-    <span class="num">17</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">Oswald Light</div>
-  </div>
-
-  <div class="panel p18">
-    <span class="num">18</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">Italic Block</div>
-  </div>
-
-  <div class="panel p19">
-    <span class="num">19</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">Rule Lines</div>
-  </div>
-
-  <div class="panel p20">
-    <span class="num">20</span>
-    <div class="logo">F<span class="o">Ø</span>LD</div>
-    <div class="label">Unbounded Black</div>
-  </div>
-
 </div>
 
 </body>
