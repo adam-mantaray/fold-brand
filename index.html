@@ -6,10 +6,12 @@
 <title>FØLD — Logo Explorations</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,200;0,300;0,600;0,700;0,800;0,900;1,700&family=Big+Shoulders+Display:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,700;0,900;1,100&family=Oswald:wght@200;300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,700;0,900;1,100&family=Space+Grotesk:wght@300;400;500;700&family=Anton&family=Unbounded:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,200;0,300;0,600;0,700;0,800;0,900;1,700;1,900&family=Big+Shoulders+Display:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,700;0,900&family=Oswald:wght@200;300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,700;0,900&family=Space+Grotesk:wght@300;400;500;700&family=Anton&family=Unbounded:wght@300;400;700;900&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* ——— RESET ——— */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* ——— TOKENS ——— */
 :root {
   --orange: #FF5722;
   --yellow: #FFB300;
@@ -17,216 +19,226 @@
   --cream: #FFF8F0;
   --offwhite: #FAFAF8;
   --bg: #EDEBE6;
-  --grid-gap: 2px;
+  --gap: 1.5px;
+  --panel-h: 44vw;
+  --logo-size: clamp(40px, 12vw, 108px);
 }
+
+/* ——— BASE ——— */
+html { -webkit-text-size-adjust: 100%; }
 
 body {
   background: var(--bg);
   font-family: 'Space Grotesk', sans-serif;
-  padding: 80px 60px;
+  min-height: 100dvh;
 }
 
+/* ——— HEADER ——— */
 header {
+  padding: clamp(24px, 6vw, 60px) clamp(16px, 4vw, 40px) clamp(20px, 5vw, 48px);
   text-align: center;
-  margin-bottom: 56px;
 }
 
 header h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
+  font-size: clamp(8px, 2vw, 11px);
   font-weight: 300;
-  letter-spacing: 6px;
+  letter-spacing: clamp(3px, 1vw, 6px);
   text-transform: uppercase;
-  color: #999;
-  margin-bottom: 10px;
+  color: #888;
+  margin-bottom: 8px;
 }
 
 header p {
   font-family: 'Montserrat', sans-serif;
-  font-size: 9px;
+  font-size: clamp(7px, 1.6vw, 9px);
   font-weight: 300;
-  letter-spacing: 3px;
+  letter-spacing: clamp(2px, 0.8vw, 4px);
   text-transform: uppercase;
-  color: #BBB;
+  color: #AAA;
 }
 
+/* ——— GRID — mobile first: 2 cols ——— */
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--grid-gap);
-  background: #CCC8C0;
-  max-width: 1400px;
-  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap);
+  background: #C8C4BC;
 }
 
+/* tablet: 3 cols */
+@media (min-width: 600px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+  :root { --panel-h: 30vw; }
+}
+
+/* desktop: 4 cols */
+@media (min-width: 900px) {
+  .grid { grid-template-columns: repeat(4, 1fr); }
+  :root { --panel-h: 22vw; }
+}
+
+@media (min-width: 1400px) {
+  :root { --panel-h: 280px; }
+}
+
+/* ——— PANEL ——— */
 .panel {
   position: relative;
-  background: var(--offwhite);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 280px;
-  padding: 40px 32px 52px;
+  background: var(--offwhite);
+  height: var(--panel-h);
+  padding: 16px 12px 36px;
   overflow: hidden;
-}
-
-.label {
-  position: absolute;
-  bottom: 16px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 7.5px;
-  font-weight: 400;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #BCBCB0;
 }
 
 .num {
   position: absolute;
-  top: 16px;
-  left: 20px;
+  top: 10px;
+  left: 12px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 8px;
+  font-size: clamp(7px, 1.5vw, 9px);
   font-weight: 300;
   letter-spacing: 1px;
   color: #D0CCBF;
+  line-height: 1;
 }
 
-/* ——— 1. ARCHITECTURAL ——— */
+.label {
+  position: absolute;
+  bottom: 11px;
+  left: 0; right: 0;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(6px, 1.4vw, 8px);
+  font-weight: 400;
+  letter-spacing: clamp(1.5px, 0.5vw, 3px);
+  text-transform: uppercase;
+  color: #BCBCB0;
+}
+
+/* ——— LOGO BASE SIZE ——— */
+.logo {
+  font-size: var(--logo-size);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+
+/* ================================================================
+   VARIATION STYLES
+================================================================ */
+
+/* 01 — ARCHITECTURAL */
 .p1 { background: var(--offwhite); }
 .p1 .logo {
   font-family: 'Big Shoulders Display', cursive;
-  font-size: 104px;
   font-weight: 900;
-  letter-spacing: -2px;
+  letter-spacing: -0.02em;
   color: var(--charcoal);
-  line-height: 1;
 }
 .p1 .o { color: var(--orange); }
 
-/* ——— 2. EDITORIAL SERIF ——— */
+/* 02 — EDITORIAL SERIF */
 .p2 { background: var(--cream); }
 .p2 .logo {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 86px;
   font-weight: 300;
-  letter-spacing: 10px;
+  letter-spacing: 0.1em;
   color: var(--charcoal);
-  line-height: 1;
+  font-size: calc(var(--logo-size) * 0.88);
 }
 .p2 .o { color: var(--orange); }
-.p2 .label { color: #C8B89A; }
+.p2 .label, .p2 .num { color: #C8B89A; }
 
-/* ——— 3. DARK CONDENSED ——— */
+/* 03 — DARK CONDENSED */
 .p3 { background: var(--charcoal); }
 .p3 .logo {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 108px;
   font-weight: 800;
-  letter-spacing: 6px;
+  letter-spacing: 0.05em;
   color: #FAFAFA;
-  line-height: 1;
-  text-transform: uppercase;
 }
 .p3 .o { color: var(--orange); }
 .p3 .label { color: #555; }
-.p3 .num { color: #444; }
+.p3 .num  { color: #444; }
 
-/* ——— 4. ULTRA THIN ——— */
+/* 04 — ULTRA THIN */
 .p4 { background: #FAFAFA; }
 .p4 .logo {
   font-family: 'Montserrat', sans-serif;
-  font-size: 72px;
   font-weight: 100;
-  letter-spacing: 22px;
+  letter-spacing: 0.22em;
+  padding-left: 0.22em;
   color: var(--charcoal);
-  line-height: 1;
-  text-transform: uppercase;
-  padding-left: 22px;
+  font-size: calc(var(--logo-size) * 0.78);
 }
 .p4 .o { color: var(--orange); }
 
-/* ——— 5. WARM GOLDEN ——— */
+/* 05 — WARM GOLDEN */
 .p5 { background: var(--cream); }
 .p5 .logo {
   font-family: 'Oswald', sans-serif;
-  font-size: 104px;
   font-weight: 700;
-  letter-spacing: 6px;
+  letter-spacing: 0.06em;
   color: var(--yellow);
-  line-height: 1;
-  text-transform: uppercase;
 }
 .p5 .o { color: var(--orange); }
-.p5 .label { color: #C8B89A; }
+.p5 .label, .p5 .num { color: #C8B89A; }
 
-/* ——— 6. ORANGE BLOCK ——— */
+/* 06 — ORANGE BLOCK */
 .p6 { background: var(--orange); }
 .p6 .logo {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 104px;
   font-weight: 700;
-  letter-spacing: 6px;
+  letter-spacing: 0.05em;
   color: #FAFAFA;
-  line-height: 1;
-  text-transform: uppercase;
 }
 .p6 .o { color: var(--yellow); }
 .p6 .label { color: rgba(255,255,255,0.35); }
-.p6 .num { color: rgba(255,255,255,0.3); }
+.p6 .num   { color: rgba(255,255,255,0.28); }
 
-/* ——— 7. ITALIC SERIF ——— */
+/* 07 — PLAYFAIR ITALIC */
 .p7 { background: var(--offwhite); }
 .p7 .logo {
   font-family: 'Playfair Display', serif;
-  font-size: 86px;
   font-weight: 700;
   font-style: italic;
-  letter-spacing: 2px;
+  letter-spacing: 0.02em;
   color: var(--charcoal);
-  line-height: 1;
+  font-size: calc(var(--logo-size) * 0.88);
 }
 .p7 .o { color: var(--orange); }
 
-/* ——— 8. IMPACT POSTER ——— */
+/* 08 — IMPACT POSTER */
 .p8 { background: var(--yellow); }
 .p8 .logo {
   font-family: 'Anton', sans-serif;
-  font-size: 110px;
-  letter-spacing: 4px;
+  letter-spacing: 0.04em;
   color: var(--charcoal);
-  line-height: 1;
-  text-transform: uppercase;
 }
 .p8 .o { color: var(--orange); }
-.p8 .label { color: rgba(0,0,0,0.25); }
-.p8 .num { color: rgba(0,0,0,0.2); }
+.p8 .label, .p8 .num { color: rgba(0,0,0,0.22); }
 
-/* ——— 9. OUTLINE STROKE ——— */
+/* 09 — OUTLINE STROKE */
 .p9 { background: #FAFAFA; }
 .p9 .logo {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 108px;
   font-weight: 800;
-  letter-spacing: 4px;
+  letter-spacing: 0.04em;
   color: transparent;
-  -webkit-text-stroke: 2px var(--charcoal);
-  line-height: 1;
-  text-transform: uppercase;
+  -webkit-text-stroke: 1.5px var(--charcoal);
 }
-.p9 .o {
-  -webkit-text-stroke: 2.5px var(--orange);
-}
+.p9 .o { -webkit-text-stroke: 2px var(--orange); }
 
-/* ——— 10. BRAND MARK LOCKUP ——— */
+/* 10 — BRAND MARK LOCKUP */
 .p10 { background: var(--cream); }
 .p10 .mark {
   font-family: 'Big Shoulders Display', cursive;
-  font-size: 120px;
+  font-size: clamp(64px, 18vw, 130px);
   font-weight: 900;
   color: var(--orange);
   line-height: 0.9;
@@ -234,179 +246,143 @@ header p {
 }
 .p10 .sub {
   font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
+  font-size: clamp(8px, 2vw, 14px);
   font-weight: 300;
-  letter-spacing: 12px;
+  letter-spacing: clamp(6px, 2vw, 12px);
   color: var(--charcoal);
   text-transform: uppercase;
-  padding-left: 12px;
+  padding-left: clamp(6px, 2vw, 12px);
   margin-top: 6px;
 }
-.p10 .label { color: #C8B89A; }
+.p10 .label, .p10 .num { color: #C8B89A; }
 
-/* ——— 11. RALEWAY LIGHT ——— */
+/* 11 — RALEWAY HAIRLINE */
 .p11 { background: var(--offwhite); }
 .p11 .logo {
   font-family: 'Raleway', sans-serif;
-  font-size: 88px;
   font-weight: 100;
-  letter-spacing: 12px;
+  letter-spacing: 0.12em;
+  padding-left: 0.12em;
   color: var(--charcoal);
-  line-height: 1;
-  text-transform: uppercase;
-  padding-left: 12px;
+  font-size: calc(var(--logo-size) * 0.88);
 }
 .p11 .o { color: var(--orange); }
 
-/* ——— 12. UNBOUNDED WIDE ——— */
+/* 12 — UNBOUNDED BOLD */
 .p12 { background: var(--charcoal); }
 .p12 .logo {
   font-family: 'Unbounded', sans-serif;
-  font-size: 56px;
   font-weight: 700;
-  letter-spacing: 4px;
+  letter-spacing: 0.04em;
   color: #FAFAFA;
-  line-height: 1;
-  text-transform: uppercase;
+  font-size: calc(var(--logo-size) * 0.62);
 }
 .p12 .o { color: var(--orange); }
 .p12 .label { color: #555; }
-.p12 .num { color: #444; }
+.p12 .num   { color: #444; }
 
-/* ——— 13. SPLIT COLOR ——— */
+/* 13 — SPLIT COLOR */
 .p13 { background: #FAFAFA; }
 .p13 .logo {
   font-family: 'Big Shoulders Display', cursive;
-  font-size: 104px;
   font-weight: 900;
-  letter-spacing: -2px;
-  line-height: 1;
+  letter-spacing: -0.02em;
 }
 .p13 .f  { color: var(--orange); }
 .p13 .o  { color: var(--orange); }
 .p13 .ld { color: var(--charcoal); }
 
-/* ——— 14. DM SERIF ITALIC ——— */
+/* 14 — DM SERIF ITALIC */
 .p14 { background: var(--cream); }
 .p14 .logo {
   font-family: 'DM Serif Display', serif;
-  font-size: 90px;
   font-style: italic;
-  letter-spacing: 4px;
+  letter-spacing: 0.04em;
   color: var(--charcoal);
-  line-height: 1;
+  font-size: calc(var(--logo-size) * 0.9);
 }
 .p14 .o { color: var(--orange); }
-.p14 .label { color: #C8B89A; }
+.p14 .label, .p14 .num { color: #C8B89A; }
 
-/* ——— 15. CONDENSED LIGHT ——— */
+/* 15 — CONDENSED LIGHT */
 .p15 { background: var(--offwhite); }
 .p15 .logo {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 110px;
   font-weight: 200;
-  letter-spacing: 10px;
+  letter-spacing: 0.1em;
+  padding-left: 0.1em;
   color: var(--charcoal);
-  line-height: 1;
-  text-transform: uppercase;
-  padding-left: 10px;
 }
 .p15 .o { color: var(--orange); }
 
-/* ——— 16. CHARCOAL YELLOW ——— */
+/* 16 — CHARCOAL × GOLD */
 .p16 { background: var(--charcoal); }
 .p16 .logo {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 88px;
   font-weight: 600;
-  letter-spacing: 8px;
+  letter-spacing: 0.08em;
   color: var(--yellow);
-  line-height: 1;
+  font-size: calc(var(--logo-size) * 0.9);
 }
 .p16 .o { color: var(--orange); }
 .p16 .label { color: #555; }
-.p16 .num { color: #444; }
+.p16 .num   { color: #444; }
 
-/* ——— 17. OSWALD LIGHT ——— */
+/* 17 — OSWALD LIGHT */
 .p17 { background: #FAFAFA; }
 .p17 .logo {
   font-family: 'Oswald', sans-serif;
-  font-size: 110px;
   font-weight: 200;
-  letter-spacing: 14px;
+  letter-spacing: 0.14em;
+  padding-left: 0.14em;
   color: var(--charcoal);
-  line-height: 1;
-  text-transform: uppercase;
-  padding-left: 14px;
 }
 .p17 .o { color: var(--orange); }
 
-/* ——— 18. BARLOW ITALIC ——— */
+/* 18 — ITALIC BLOCK */
 .p18 { background: var(--orange); }
 .p18 .logo {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 108px;
   font-weight: 900;
   font-style: italic;
-  letter-spacing: 2px;
+  letter-spacing: 0.02em;
   color: #FAFAFA;
-  line-height: 1;
-  text-transform: uppercase;
 }
 .p18 .o { color: var(--yellow); }
 .p18 .label { color: rgba(255,255,255,0.35); }
-.p18 .num { color: rgba(255,255,255,0.3); }
+.p18 .num   { color: rgba(255,255,255,0.28); }
 
-/* ——— 19. SMALL MINIMAL ——— */
-.p19 {
-  background: var(--cream);
-  position: relative;
-}
-.p19::before {
+/* 19 — RULE LINES */
+.p19 { background: var(--cream); }
+.p19::before, .p19::after {
   content: '';
   position: absolute;
-  top: 55px;
-  left: 32px;
-  right: 32px;
+  left: 14%; right: 14%;
   height: 1px;
   background: var(--orange);
-  opacity: 0.4;
+  opacity: 0.35;
 }
-.p19::after {
-  content: '';
-  position: absolute;
-  bottom: 42px;
-  left: 32px;
-  right: 32px;
-  height: 1px;
-  background: var(--orange);
-  opacity: 0.4;
-}
+.p19::before { top: 22%; }
+.p19::after  { bottom: 28%; }
 .p19 .logo {
   font-family: 'Montserrat', sans-serif;
-  font-size: 42px;
   font-weight: 300;
-  letter-spacing: 18px;
+  letter-spacing: 0.18em;
+  padding-left: 0.18em;
   color: var(--charcoal);
-  line-height: 1;
-  text-transform: uppercase;
-  padding-left: 18px;
+  font-size: calc(var(--logo-size) * 0.55);
 }
 .p19 .o { color: var(--orange); }
-.p19 .label { color: #C8B89A; }
+.p19 .label, .p19 .num { color: #C8B89A; }
 
-/* ——— 20. UNBOUNDED BLACK ——— */
-.p20 {
-  background: var(--offwhite);
-}
+/* 20 — UNBOUNDED BLACK */
+.p20 { background: var(--offwhite); }
 .p20 .logo {
   font-family: 'Unbounded', sans-serif;
-  font-size: 52px;
   font-weight: 900;
-  letter-spacing: -1px;
+  letter-spacing: -0.01em;
   color: var(--charcoal);
-  line-height: 1;
-  text-transform: uppercase;
+  font-size: calc(var(--logo-size) * 0.62);
 }
 .p20 .o { color: var(--orange); }
 
@@ -479,7 +455,7 @@ header p {
     <span class="num">10</span>
     <div class="mark">Ø</div>
     <div class="sub">FØLD</div>
-    <div class="label">Brand Mark Lockup</div>
+    <div class="label">Brand Mark</div>
   </div>
 
   <div class="panel p11">
